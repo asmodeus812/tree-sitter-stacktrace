@@ -1,0 +1,37 @@
+{
+  "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/config.schema.json",
+  "grammars": [
+    {
+      "name": "stacktrace",
+      "camelcase": "Stacktrace",
+      "title": "Stacktrace",
+      "scope": "source.stacktrace",
+      "file-types": ["stacktrace"],
+      "injection-regex": "^stacktrace$",
+      "class-name": "TreeSitterTrace"
+    }
+  ],
+  "metadata": {
+    "version": "0.1.0",
+    "license": "MIT",
+    "description": "Parser for stack stacktrace formats",
+    "authors": [
+      {
+        "name": "asmodeus812"
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/asmodeus812/tree-sitter-stacktrace.git"
+    }
+  },
+  "bindings": {
+    "c": true,
+    "go": true,
+    "node": true,
+    "python": true,
+    "rust": true,
+    "swift": true,
+    "zig": false
+  }
+}
+

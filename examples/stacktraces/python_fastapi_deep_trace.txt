@@ -1,0 +1,48 @@
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/uvicorn/protocols/http/h11_impl.py", line 429, in run_asgi
+    result = await app(scope, receive, send)
+  File "/usr/local/lib/python3.12/site-packages/uvicorn/middleware/proxy_headers.py", line 78, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.12/site-packages/fastapi/applications.py", line 1106, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.12/site-packages/starlette/applications.py", line 122, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.12/site-packages/starlette/middleware/errors.py", line 184, in __call__
+    raise exc
+  File "/usr/local/lib/python3.12/site-packages/starlette/middleware/errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.12/site-packages/starlette/middleware/base.py", line 108, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "/app/src/middleware/request_context.py", line 37, in add_context
+    return await call_next(request)
+  File "/usr/local/lib/python3.12/site-packages/starlette/middleware/base.py", line 84, in call_next
+    raise app_exc
+  File "/usr/local/lib/python3.12/site-packages/starlette/middleware/base.py", line 70, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "/usr/local/lib/python3.12/site-packages/starlette/routing.py", line 718, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.12/site-packages/starlette/routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.12/site-packages/starlette/routing.py", line 66, in app
+    response = await func(request)
+  File "/usr/local/lib/python3.12/site-packages/fastapi/routing.py", line 274, in app
+    raw_response = await run_endpoint_function(
+  File "/usr/local/lib/python3.12/site-packages/fastapi/routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+  File "/app/src/api/orders.py", line 58, in place_order
+    created = await service.place_order(payload)
+  File "/app/src/services/order_service.py", line 104, in place_order
+    row = await repo.create_order(order)
+  File "/app/src/repositories/order_repository.py", line 77, in create_order
+    return result[0]
+IndexError: list index out of range
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/src/api/orders.py", line 63, in place_order
+    raise HTTPException(status_code=500, detail=f"failed to create order: {exc}")
+  File "/usr/local/lib/python3.12/site-packages/fastapi/exceptions.py", line 21, in __init__
+    super().__init__(status_code=status_code, detail=detail, headers=headers)
+RuntimeError: failed to create order: list index out of range

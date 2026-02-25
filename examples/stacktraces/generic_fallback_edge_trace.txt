@@ -1,0 +1,4 @@
+/home/runner/work/app/src/main.c:17:5: error: expected ';' after expression
+src/lib/utils.rs(88, 13): panic: called `Option::unwrap()` on a `None` value
+README.md:12: malformed section header
+C:\src\app\Program.cs:44:9: warning CS8602: Dereference of a possibly null reference

@@ -1,0 +1,32 @@
+Fatal error: /Users/runner/work/MyApp/MyApp/Sources/Checkout/CheckoutViewModel.swift:214:17: unexpectedly found nil while unwrapping an Optional value
+
+Thread 0 Crashed:
+0   MyApp                              0x0000000102a45d44 closure #1 in CheckoutViewModel.submitOrder() + 212
+1   MyApp                              0x0000000102a44f3c CheckoutViewModel.submitOrder() + 1216
+2   MyApp                              0x00000001029f0ae0 specialized OrderService.placeOrder(payload:) + 348
+3   MyApp                              0x00000001029ef1f0 protocol witness for OrderServicing.placeOrder(payload:) in conformance OrderService + 36
+4   MyApp                              0x0000000102a4c6f8 CheckoutCoordinator.confirmTapped() + 572
+5   MyApp                              0x0000000102a512f0 @objc CheckoutViewController.confirmButtonTapped() + 72
+6   UIKitCore                          0x0000000188dfc638 -[UIApplication sendAction:to:from:forEvent:] + 96
+7   UIKitCore                          0x00000001890b4fb4 -[UIControl sendAction:to:forEvent:] + 80
+8   UIKitCore                          0x00000001890b52b8 -[UIControl _sendActionsForEvents:withEvent:] + 444
+9   UIKitCore                          0x00000001890b44f8 -[UIButton _sendActionsForEvents:withEvent:] + 152
+10  UIKitCore                          0x00000001890b39a8 -[UIControl touchesEnded:withEvent:] + 560
+11  UIKitCore                          0x0000000188e3b8dc -[UIWindow _sendTouchesForEvent:] + 1152
+12  UIKitCore                          0x0000000188e4f1c4 -[UIWindow sendEvent:] + 4120
+13  UIKitCore                          0x0000000188e2f614 -[UIApplication sendEvent:] + 676
+14  UIKitCore                          0x0000000188db40dc __dispatchPreprocessedEventFromEventQueue + 7208
+15  UIKitCore                          0x0000000188db71c4 __processEventQueue + 6840
+16  UIKitCore                          0x0000000188db0dc8 updateCycleEntry + 168
+17  UIKitCore                          0x00000001888a1348 _UIUpdateSequenceRun + 76
+18  UIKitCore                          0x0000000188db0588 schedulerStepScheduledMainSectionContinue + 56
+19  CoreFoundation                     0x0000000182f9265c __CFRUNLOOP_IS_CALLING_OUT_TO_A_SOURCE0_PERFORM_FUNCTION__ + 28
+20  CoreFoundation                     0x0000000182f92600 __CFRunLoopDoSource0 + 176
+21  CoreFoundation                     0x0000000182f92350 __CFRunLoopDoSources0 + 244
+22  CoreFoundation                     0x0000000182f90f88 __CFRunLoopRun + 840
+23  CoreFoundation                     0x0000000182f90428 CFRunLoopRunSpecific + 608
+24  GraphicsServices                   0x00000001c9f4da04 GSEventRunModal + 164
+25  UIKitCore                          0x0000000188d9a4f4 -[UIApplication _run] + 888
+26  UIKitCore                          0x0000000188d99d2c UIApplicationMain + 340
+27  MyApp                              0x00000001028aef54 main + 68
+28  dyld                               0x0000000102df1430 start + 4

@@ -1,0 +1,8 @@
+** (RuntimeError) failed to persist order
+    (my_app 0.1.0) lib/my_app/orders.ex:92: MyApp.Orders.place_order/2
+    (my_app 0.1.0) lib/my_app_web/controllers/order_controller.ex:41: MyAppWeb.OrderController.create/2
+    (phoenix 1.7.14) lib/phoenix/router.ex:465: Phoenix.Router.__call__/5
+    (my_app 0.1.0) lib/my_app_web/endpoint.ex:1: MyAppWeb.Endpoint.plug_builder_call/2
+    (plug 1.15.3) lib/plug/debugger.ex:136: MyAppWeb.Endpoint."call (overridable 3)"/2
+    (my_app 0.1.0) lib/my_app_web/endpoint.ex:1: MyAppWeb.Endpoint.call/2
+    (phoenix 1.7.14) lib/phoenix/endpoint/sync_code_reload_plug.ex:22: Phoenix.Endpoint.SyncCodeReloadPlug.do_call/4

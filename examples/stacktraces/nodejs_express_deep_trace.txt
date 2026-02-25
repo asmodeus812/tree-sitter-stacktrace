@@ -1,0 +1,29 @@
+Error: connect ETIMEDOUT 10.42.1.19:5432
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+    at async PostgresClient.query (/srv/app/src/db/postgres-client.ts:84:13)
+    at async OrderRepository.findById (/srv/app/src/repositories/order.repository.ts:57:22)
+    at async OrderService.placeOrder (/srv/app/src/services/order.service.ts:143:18)
+    at async /srv/app/src/routes/orders.ts:41:7
+    at Layer.handle [as handle_request] (/srv/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/srv/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/srv/app/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/srv/app/node_modules/express/lib/router/layer.js:95:5)
+    at /srv/app/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/srv/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/srv/app/node_modules/express/lib/router/index.js:280:10)
+    at /srv/app/src/middleware/auth.ts:28:5
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Caused by: Error: read ETIMEDOUT
+    at TLSWrap.onStreamRead (node:internal/stream_base_commons:217:20)
+    at async /srv/app/src/lib/retry.ts:44:19
+    at async withRetry (/srv/app/src/lib/retry.ts:21:14)
+    at async PostgresClient.connect (/srv/app/src/db/postgres-client.ts:38:5)
+    at async bootstrap (/srv/app/src/main.ts:62:3)
+
+TypeError: Cannot read properties of undefined (reading 'id')
+    at mapOrderResponse (/srv/app/src/mappers/order.mapper.ts:19:24)
+    at OrderController.placeOrder (/srv/app/src/controllers/order.controller.ts:88:27)
+    at /srv/app/src/routes/orders.ts:43:16
+    at Layer.handle [as handle_request] (/srv/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/srv/app/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/srv/app/node_modules/express/lib/router/route.js:119:3)

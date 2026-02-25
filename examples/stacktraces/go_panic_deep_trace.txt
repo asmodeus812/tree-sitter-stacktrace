@@ -1,0 +1,22 @@
+panic: runtime error: invalid memory address or nil pointer dereference
+[signal SIGSEGV: segmentation violation code=0x1 addr=0x18 pc=0x1048a59]
+
+goroutine 87 [running]:
+mycorp.dev/billing/internal/repo.(*OrderRepo).Save(0x140001e8a80, {0x1052f98f0, 0x1400027e300}, 0x140003af500)
+	/home/runner/work/billing/billing/internal/repo/order_repo.go:214 +0x1b8
+mycorp.dev/billing/internal/service.(*OrderService).PlaceOrder(0x140001e8a50, {0x1052f98f0, 0x1400027e300}, 0x140003af500)
+	/home/runner/work/billing/billing/internal/service/order_service.go:97 +0x2a4
+mycorp.dev/billing/internal/http.(*Handler).PostOrder(0x140001da900, {0x105313810, 0x14000200480}, 0x140002d8f00)
+	/home/runner/work/billing/billing/internal/http/order_handler.go:63 +0x190
+net/http.HandlerFunc.ServeHTTP(0x140001d76c0?, {0x105313810?, 0x14000200480?}, 0x140001a8c58?)
+	/usr/local/go/src/net/http/server.go:2166 +0x38
+github.com/go-chi/chi/v5.(*Mux).routeHTTP(0x1400029c240, {0x105313810, 0x14000200480}, 0x140002d8f00)
+	/home/runner/go/pkg/mod/github.com/go-chi/chi/v5@v5.0.11/mux.go:444 +0x2f4
+github.com/go-chi/chi/v5.(*Mux).ServeHTTP(0x1400029c240, {0x105313810, 0x14000200480}, 0x140002d8f00)
+	/home/runner/go/pkg/mod/github.com/go-chi/chi/v5@v5.0.11/mux.go:90 +0x2f8
+net/http.serverHandler.ServeHTTP({0x140003b81b0?}, {0x105313810?, 0x14000200480?}, 0x6?)
+	/usr/local/go/src/net/http/server.go:3210 +0xbc
+net/http.(*conn).serve(0x140002b2480, {0x1052f98f0, 0x1400027e1e0})
+	/usr/local/go/src/net/http/server.go:2092 +0x5d0
+created by net/http.(*Server).Serve in goroutine 1
+	/usr/local/go/src/net/http/server.go:3360 +0x48c

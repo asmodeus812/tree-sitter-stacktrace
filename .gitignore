@@ -1,0 +1,41 @@
+# Build artifacts
+build/
+prebuilds/
+target/
+.build/
+_obj/
+dist/
+*.egg-info
+*.whl
+
+# Local environments
+node_modules/
+.venv/
+venv/
+.env
+
+# Native outputs
+*.a
+*.o
+*.obj
+*.so
+*.so.*
+*.dylib
+*.dll
+*.pc
+*.exp
+*.lib
+*.wasm
+
+# Parser run logs
+.parse-examples/
+.assert-fields/
+
+# Archives
+*.tar.gz
+*.tgz
+*.zip
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
